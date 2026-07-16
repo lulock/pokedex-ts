@@ -1,0 +1,14 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "configureZshAsDefaultShell": true
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:4": {
+            "moby": false
+        }
+    },
+
+    "postCreateCommand": "npm install"
+
+}
