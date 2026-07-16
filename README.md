@@ -1,13 +1,12 @@
 # Pokedex CLI (TypeScript)
-
-A commandline Pokedex REPL built while working through Boot.dev's "Build a Pokedex in TypeScript" course.
-
 ![Node](https://img.shields.io/badge/node-22.x-green)
 ![Vitest](https://img.shields.io/github/package-json/dependency-version/lulock/pokedex-ts/dev/vitest)
 ![TypeScript](https://img.shields.io/github/package-json/dependency-version/lulock/pokedex-ts/dev/typescript)
 ![Last Commit](https://img.shields.io/github/last-commit/lulock/pokedex-ts)
 ![PokeAPI](https://img.shields.io/badge/data-PokeAPI-red)
 ![License](https://img.shields.io/github/license/lulock/pokedex-ts)
+
+A commandline Pokedex REPL built while working through Boot.dev's "Build a Pokedex in TypeScript" course.
 
 
 ## Features
