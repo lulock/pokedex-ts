@@ -14,9 +14,11 @@ A commandline Pokedex REPL built while working through Boot.dev's "Build a Poked
 - [x] REPL loop with input cleaning
 - [x] `help` command
 - [x] `exit` command
-- [ ] Pokemon exploration commands
-- [ ] Catching Pokemon
-- [ ] Inspecting caught Pokemon
+- [x] `map` and `mapb` commands
+- [ ] `explore` command
+- [ ] `catch` command
+- [ ] `inspect` command
+- [ ] Cache
 
 ## Development
 
