@@ -18,6 +18,7 @@ A commandline Pokedex REPL built while working through Boot.dev's "Build a Poked
 - [x] `explore` command
 - [x] `catch` command
 - [x] `inspect` command
+- [x] `pokedex` command
 - [x] Cache
 
 ## Development
