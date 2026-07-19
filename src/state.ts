@@ -3,8 +3,10 @@ import { stdin, stdout } from "node:process";
 import { commandExit } from "./command_exit.js";
 import { commandHelp } from "./command_help.js";
 import { commandMap, commandMapb } from "./command_map.js";
-import { PokeAPI } from "./pokeapi.js";
+import { PokeAPI, Pokemon } from "./pokeapi.js";
 import { commandExplore } from "./command_explore.js";
+import { commandCatch } from "./command_catch.js";
+import { commandInspect } from "./command_inspect.js";
 
 export type State = {
     rlInterface: Interface;
@@ -12,6 +14,7 @@ export type State = {
     api: PokeAPI;
     nextLocationsURL: string | undefined;
     prevLocationsURL: string | undefined;
+    pokedex : Record<string, Pokemon>;
 };
 
 export type CLICommand = {
@@ -53,6 +56,16 @@ export function initState(): State {
             name: "explore",
             description: "Displays the names of the Pokemon enountered in the area. Takes location area name or id as input.",
             callback: commandExplore,
+        },
+        catch: {
+            name: "catch",
+            description: "Catch pokemon and add to pokedex if successgful.",
+            callback: commandCatch,
+        },
+        inspect: {
+            name: "inspect",
+            description: "Display pokemon info if caught and added to pokedex.",
+            callback: commandInspect,
         }
     
       };
@@ -63,5 +76,6 @@ export function initState(): State {
         api: new PokeAPI(),
         nextLocationsURL: undefined,
         prevLocationsURL: undefined,
+        pokedex: {},
     }
 }

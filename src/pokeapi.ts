@@ -65,6 +65,25 @@ export class PokeAPI {
 
         return result;
     }
+
+    async fetchPokemon(pokemon: string | number): Promise<Pokemon>{
+        const url = `${PokeAPI.baseURL}/pokemon/${pokemon}`;
+        const cached = this.#cache.get(url);
+        if (cached) {
+            return cached;
+        }
+
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+        const result: Pokemon = await response.json();
+
+        this.#cache.add(url, result);
+
+        return result;
+    }
+
 }
 
 export type ShallowLocations = {
@@ -88,10 +107,37 @@ export type ShallowEncounters = {
 }
 
 export type PokemonEncounter = {
-  pokemon: Pokemon
+  pokemon: ShallowPokemon
+}
+
+export type ShallowPokemon = {
+  name: string
+  url: string
 }
 
 export type Pokemon = {
+  base_experience: number
+  id: number
+  location_area_encounters: string
   name: string
-  url: string
+  height: number
+  weight: number,
+  stats: Stat[],
+  types: Type[]
+}
+
+export type Stat = {
+  base_stat: number
+  stat: {
+    name: string
+    url: string
+  }
+}
+
+export interface Type {
+  slot: number
+  type: {
+    name: string
+    url: string
+  }
 }
