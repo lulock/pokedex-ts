@@ -2,7 +2,7 @@ import { Pokemon } from "./pokeapi.js";
 import type { State } from "./state.js";
 
 export async function commandCatch(state: State, ...args: string[]): Promise<void> {
-    // fetches information about pokemon and uses "base experience" to determine chance of capture.
+    // throws a pokeball at pokemon and uses "base experience" to determine chance of capture.
     // displays message with success or failure
     const name = args[0]
     const pokemon = await state.api.fetchPokemon(name);

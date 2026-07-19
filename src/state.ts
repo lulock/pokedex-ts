@@ -7,6 +7,7 @@ import { PokeAPI, Pokemon } from "./pokeapi.js";
 import { commandExplore } from "./command_explore.js";
 import { commandCatch } from "./command_catch.js";
 import { commandInspect } from "./command_inspect.js";
+import { commandPokedex } from "./command_pokedex.js";
 
 export type State = {
     rlInterface: Interface;
@@ -66,6 +67,11 @@ export function initState(): State {
             name: "inspect",
             description: "Display pokemon info if caught and added to pokedex.",
             callback: commandInspect,
+        },
+        pokedex: {
+            name: "pokedex",
+            description: "List all caught pokemon in pokedex.",
+            callback: commandPokedex,
         }
     
       };
