@@ -12,10 +12,11 @@ export function startREPL(state: State) {
     state.rlInterface.on('line', async (line) => {
         const cleanedLine = cleanInput(line);
         const command = cleanedLine[0];
+        const args = cleanedLine.slice(1);
         const registry = state.commandsRegistry;
         if (command in registry) {
             try {
-                await registry[command].callback(state);
+                await registry[command].callback(state, ...args);
             } catch (err) {
                 if (err instanceof Error) {
                     console.log(err.message)
