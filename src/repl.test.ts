@@ -20,7 +20,6 @@ describe.each([
   },  
 ])("cleanInput($input)", ({ input, expected }) => {
   test(`Expected: ${expected}`, () => {
-    // TODO: call cleanInput with the input here
     let actual = cleanInput(input)
 
     // The `expect` and `toHaveLength` functions are from vitest
