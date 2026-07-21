@@ -8,6 +8,7 @@ import { commandExplore } from "./command_explore.js";
 import { commandCatch } from "./command_catch.js";
 import { commandInspect } from "./command_inspect.js";
 import { commandPokedex } from "./command_pokedex.js";
+import { commandRelease } from "./command_release.js";
 
 export type State = {
     rlInterface: Interface;
@@ -72,6 +73,11 @@ export function initState(): State {
             name: "pokedex",
             description: "List all caught pokemon in pokedex.",
             callback: commandPokedex,
+        },
+        release: {
+            name: "release",
+            description: "Release pokemon back into the wild and removes record from pokedex.",
+            callback: commandRelease,
         }
     
       };

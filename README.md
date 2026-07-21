@@ -19,6 +19,9 @@ A commandline Pokedex REPL built while working through Boot.dev's "Build a Poked
 - [x] `catch` command
 - [x] `inspect` command
 - [x] `pokedex` command
+- [x] `release` command
+- [ ] `nickname` command
+- [ ] Persistence across sessions
 - [x] Cache
 
 ## Development
